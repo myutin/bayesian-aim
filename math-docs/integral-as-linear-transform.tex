@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{geometry}[margin = 1in]
+\usepackage{amsmath, amssymb, mathtools}
+
+\begin{document}
+\title{Integral as a Linear Transformation}
+\author{myutin}
+\date{\today}
+\maketitle
+
+Suppose we have an instantaneous motion vector $ (x _0, v _0, a _0) ^T $ at time $ 0 $, with constant acceleration. Then, at time $ t $, the vector is given as:
+\begin{align*}
+	a _t &= a _0 ,\\
+	v _t &= v _0 + t a _0 ,\\
+	x _t &= x _0 + t v _0 + \tfrac{1}{2} t ^2 a _0
+.\end{align*}
+In other words, we have:
+\[
+	\begin{bmatrix}
+		x _t \\ v _t \\ a _t
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		1 & t & \tfrac{1}{2} t ^2 \\
+		0 & 1 & t \\
+		0 & 0 & 1
+	\end{bmatrix}
+	\begin{bmatrix}
+		x _0 \\ v _0 \\ a _0
+	\end{bmatrix}
+\]
+Therefore, if we start with a multivariate normal distribution:
+\[ (x _0, v _0, a _0) ^T \sim {\cal N}(\mu _0, \Sigma _0) \]
+Then at time $ t $, the distribution is given by $ {\cal N}({\cal J} _t \mu _0, {\cal J} _t \Sigma _0 {\cal J} _t) $
+\end{document}
